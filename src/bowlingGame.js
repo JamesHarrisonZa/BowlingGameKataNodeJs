@@ -10,10 +10,7 @@ module.exports = {
 
 		//Public Methods
 
-		const roll = (pins) => {
-
-			_rolls.push(pins);
-		};
+		const roll = (pins) => _rolls.push(pins);
 
 		const calcScore = () => {
 
