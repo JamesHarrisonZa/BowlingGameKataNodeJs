@@ -41,29 +41,14 @@ module.exports = {
 
 		//Private Methods
 
-		function isStrike(firstInFrame) {
+		const isStrike = (firstInFrame) => rolls[firstInFrame] === 10;
 
-			return rolls[firstInFrame] === 10;
-		}
+		const isSpare = (firstInFrame) => rolls[firstInFrame] + rolls[firstInFrame + 1] === 10;
 
-		function isSpare(firstInFrame) {
+		const getNextTwoBallsForStrike = (firstInFrame) => rolls[firstInFrame + 1] + rolls[firstInFrame + 2];
 
-			return rolls[firstInFrame] + rolls[firstInFrame + 1] === 10;
-		}
+		const getNextBallForSpare = (firstInFrame) => rolls[firstInFrame + 2];
 
-		function getNextTwoBallsForStrike(firstInFrame) {
-
-			return rolls[firstInFrame + 1] + rolls[firstInFrame + 2];
-		}
-
-		function getNextBallForSpare(firstInFrame) {
-
-			return rolls[firstInFrame + 2];
-		}
-
-		function getTwoBallsInFrame(firstInFrame) {
-
-			return rolls[firstInFrame] + rolls[firstInFrame + 1];
-		}
+		const getTwoBallsInFrame = (firstInFrame) => rolls[firstInFrame] + rolls[firstInFrame + 1];
 	}
 };
