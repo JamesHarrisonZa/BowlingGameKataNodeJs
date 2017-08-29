@@ -2,10 +2,10 @@
   "name": "bowlinggame",
   "version": "1.0.0",
   "description": "42",
-  "main": "src/app.js",
+  "main": "src/bowlingGame.js",
   "private": true,
   "scripts": {
-    "test": "istanbul cover -x src/app.js --include-all-sources node_modules/jasmine/bin/jasmine.js"
+    "test": "istanbul cover -x src/bowlingGame.js --include-all-sources node_modules/jasmine/bin/jasmine.js"
   },
   "author": "",
   "license": "ISC",
