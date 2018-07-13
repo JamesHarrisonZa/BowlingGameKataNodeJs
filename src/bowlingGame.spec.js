@@ -13,62 +13,68 @@ describe('BowlingGame', () => {
 
 	describe('Given GutterGame', () => {
 
-		var game = new bowlingGame();
-		rollMany(game, 20, 0);
-
 		it('Should have Score 0', () => {
 
-			expect(game.calcScore()).toBe(0);
+			const sut = new bowlingGame();
+			rollMany(sut, 20, 0);
+
+			const actual = sut.calcScore();
+			const expected = 0;
+			expect(actual).toBe(expected);
 		});
 	});
 
 	describe('Given all 1s', () => {
 
-		var game = new bowlingGame();
-		rollMany(game, 20, 1);
-
 		it('Should have Score 20', () => {
 
-			expect(game.calcScore()).toBe(20);
+			const sut = new bowlingGame();
+			rollMany(sut, 20, 1);
+
+			const actual = sut.calcScore();
+			const expected = 20;
+			expect(actual).toBe(expected);
 		});
 	});
 
 	describe('Given Spare and 1', () => {
 
-		var game = new bowlingGame();
-		game.roll(5);
-		game.roll(5);
-		game.roll(1);
-		rollMany(game, 17, 0);
-
 		it('Should have Score 12', () => {
 
-			expect(game.calcScore()).toBe(12);
+			const sut = new bowlingGame();
+			sut.roll(5).roll(5).roll(1);
+			rollMany(sut, 17, 0);
+
+			const actual = sut.calcScore();
+			const expected = 12;
+			expect(actual).toBe(expected);
 		});
 	});
 
 	describe('Given Strike and 1 and 1', () => {
 
-		var game = new bowlingGame();
-		game.roll(10);
-		game.roll(1);
-		game.roll(1);
-		rollMany(game, 16, 0);
-
 		it('Should have Score 14', () => {
 
-			expect(game.calcScore()).toBe(14);
+			const sut = new bowlingGame();
+			sut.roll(10).roll(1).roll(1);
+			rollMany(sut, 16, 0);
+
+			const actual = sut.calcScore();
+			const expected = 14;
+			expect(actual).toBe(expected);
 		});
 	});
 
 	describe('Given Perfect Game', () => {
 
-		var game = new bowlingGame();
-		rollMany(game, 12, 10);
-
 		it('Should have Score 300', () => {
+			
+			const sut = new bowlingGame();
+			rollMany(sut, 12, 10);
 
-			expect(game.calcScore()).toBe(300);
+			const actual = sut.calcScore();
+			const expected = 300;
+			expect(actual).toBe(expected);
 		});
 	});
 });
