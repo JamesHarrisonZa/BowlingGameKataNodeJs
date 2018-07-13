@@ -6,7 +6,10 @@ function bowlingGame() {
 
 	//Public functions
 
-	const roll = (pins) => _rolls.push(pins);
+	const roll = (pins) => {
+		_rolls.push(pins);
+		return publicSignature;
+	};
 
 	const calcScore = () => {
 
@@ -41,10 +44,12 @@ function bowlingGame() {
 
 	const getTwoBallsInFrame = (firstInFrame) => _rolls[firstInFrame] + _rolls[firstInFrame + 1];
 
-	return {
+	const publicSignature = {
 		roll: roll,
 		calcScore: calcScore
 	};
+
+	return publicSignature;
 }
 
 module.exports = bowlingGame;
