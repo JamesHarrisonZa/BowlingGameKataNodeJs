@@ -1,53 +1,50 @@
 'use strict';
 
-module.exports = {
+function bowlingGame() {
 
-	BowlingGame: function () {
+	var _rolls = [];
 
-		//Private Fields
+	//Public functions
 
-		var _rolls = [];
+	const roll = (pins) => _rolls.push(pins);
 
-		//Public Methods
+	const calcScore = () => {
 
-		const roll = (pins) => _rolls.push(pins);
+		let score = 0;
+		let firstInFrame = 0;
 
-		const calcScore = () => {
+		for (let frame = 0; frame < 10; frame++) {
 
-			var score = 0;
-			var firstInFrame = 0;
-
-			for (var frame = 0; frame < 10; frame++) {
-
-				if (isStrike(firstInFrame)) {
-					score += 10 + getNextTwoBallsForStrike(firstInFrame);
-					firstInFrame++;
-				} else if (isSpare(firstInFrame)) {
-					score += 10 + getNextBallForSpare(firstInFrame);
-					firstInFrame += 2;
-				} else {
-					score += getTwoBallsInFrame(firstInFrame);
-					firstInFrame += 2;
-				}
+			if (isStrike(firstInFrame)) {
+				score += 10 + getNextTwoBallsForStrike(firstInFrame);
+				firstInFrame++;
+			} else if (isSpare(firstInFrame)) {
+				score += 10 + getNextBallForSpare(firstInFrame);
+				firstInFrame += 2;
+			} else {
+				score += getTwoBallsInFrame(firstInFrame);
+				firstInFrame += 2;
 			}
-			return score;
-		};
+		}
+		return score;
+	};
 
-		//Private Methods
+	//Private functions
 
-		const isStrike = (firstInFrame) => _rolls[firstInFrame] === 10;
+	const isStrike = (firstInFrame) => _rolls[firstInFrame] === 10;
 
-		const isSpare = (firstInFrame) => _rolls[firstInFrame] + _rolls[firstInFrame + 1] === 10;
+	const isSpare = (firstInFrame) => _rolls[firstInFrame] + _rolls[firstInFrame + 1] === 10;
 
-		const getNextTwoBallsForStrike = (firstInFrame) => _rolls[firstInFrame + 1] + _rolls[firstInFrame + 2];
+	const getNextTwoBallsForStrike = (firstInFrame) => _rolls[firstInFrame + 1] + _rolls[firstInFrame + 2];
 
-		const getNextBallForSpare = (firstInFrame) => _rolls[firstInFrame + 2];
+	const getNextBallForSpare = (firstInFrame) => _rolls[firstInFrame + 2];
 
-		const getTwoBallsInFrame = (firstInFrame) => _rolls[firstInFrame] + _rolls[firstInFrame + 1];
+	const getTwoBallsInFrame = (firstInFrame) => _rolls[firstInFrame] + _rolls[firstInFrame + 1];
 
-		return {
-			roll: roll,
-			calcScore: calcScore
-		};
-	}
-};
+	return {
+		roll: roll,
+		calcScore: calcScore
+	};
+}
+
+module.exports = bowlingGame;

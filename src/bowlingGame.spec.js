@@ -1,6 +1,6 @@
 'use strict';
 
-const imports = require('../src/bowlingGame');
+const bowlingGame = require('../src/bowlingGame');
 
 function rollMany(game, rolls, pins) {
 
@@ -13,7 +13,7 @@ describe('BowlingGame', () => {
 
 	describe('Given GutterGame', () => {
 
-		var game = new imports.BowlingGame();
+		var game = new bowlingGame();
 		rollMany(game, 20, 0);
 
 		it('Should have Score 0', () => {
@@ -24,7 +24,7 @@ describe('BowlingGame', () => {
 
 	describe('Given all 1s', () => {
 
-		var game = new imports.BowlingGame();
+		var game = new bowlingGame();
 		rollMany(game, 20, 1);
 
 		it('Should have Score 20', () => {
@@ -35,7 +35,7 @@ describe('BowlingGame', () => {
 
 	describe('Given Spare and 1', () => {
 
-		var game = new imports.BowlingGame();
+		var game = new bowlingGame();
 		game.roll(5);
 		game.roll(5);
 		game.roll(1);
@@ -49,7 +49,7 @@ describe('BowlingGame', () => {
 
 	describe('Given Strike and 1 and 1', () => {
 
-		var game = new imports.BowlingGame();
+		var game = new bowlingGame();
 		game.roll(10);
 		game.roll(1);
 		game.roll(1);
@@ -63,7 +63,7 @@ describe('BowlingGame', () => {
 
 	describe('Given Perfect Game', () => {
 
-		var game = new imports.BowlingGame();
+		var game = new bowlingGame();
 		rollMany(game, 12, 10);
 
 		it('Should have Score 300', () => {
