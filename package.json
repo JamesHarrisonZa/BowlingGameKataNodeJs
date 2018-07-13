@@ -5,12 +5,12 @@
   "main": "src/bowlingGame.js",
   "private": true,
   "scripts": {
-    "test": "istanbul cover -x src/bowlingGame.js --include-all-sources node_modules/jasmine/bin/jasmine.js"
+    "test": "jasmine JASMINE_CONFIG_PATH=jasmine.json"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/jasmine": "^2.5.37",
+    "@types/jasmine": "^2.8.6",
     "babel-eslint": "^7.1.0",
     "eslint": "^3.9.1",
     "eslint-config-defaults": "^9.0.0",
@@ -19,7 +19,6 @@
     "eslint-plugin-jasmine": "^2.1.0",
     "eslint-plugin-promise": "^3.3.0",
     "eslint-plugin-standard": "^2.0.1",
-    "istanbul": "^0.4.5",
-    "jasmine": "^2.5.2"
+    "jasmine": "^2.99.0"
   }
 }
