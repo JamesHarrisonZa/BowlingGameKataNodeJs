@@ -1,13 +1,13 @@
 {
   "name": "bowlinggame",
-  "version": "1.0.0",
-  "description": "42",
+  "version": "42.42.42",
+  "description": "A simple implementation of the bowling game kata with JS and Jasmine",
   "main": "src/bowlingGame.js",
   "private": true,
   "scripts": {
     "test": "jasmine JASMINE_CONFIG_PATH=jasmine.json"
   },
-  "author": "",
+  "author": "James.Harrison.Za@gmail.com",
   "license": "ISC",
   "devDependencies": {
     "@types/jasmine": "^2.8.6",
