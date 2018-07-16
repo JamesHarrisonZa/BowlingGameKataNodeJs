@@ -1,6 +1,6 @@
 'use strict';
 
-const bowlingGame = require('../src/bowlingGame');
+const bowlingGame = require('./bowlingGame');
 
 function rollMany(game, rolls, pins) {
 
